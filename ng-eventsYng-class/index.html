@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app>
+    <head>
+        <title>ng-events ng-class</title>
+        <meta charset="UTF-8">        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+        <style>
+            .hover{
+                background-color: blue;
+            }
+            .no-hover{
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <button ng-mouseover="bandera=true" ng-mouseout="bandera=false" ng-class="{'hover':bandera,'no-hover':!bandera}">
+            Over my 
+        </button><span ng-show="bandera">click me</span>
+        
+    </body>
+</html>

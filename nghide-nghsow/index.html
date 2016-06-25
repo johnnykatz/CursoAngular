@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="MyFirstApp">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+        <script src="controller.js"></script>
+        <style>
+            .animated{
+                opacity: 1;
+                max-height: auto;
+                overflow: hidden;
+                transition: all 2s;
+            }
+
+            .animated.ng-hide{
+                opacity: 0;
+                max-height: 0px !important;                
+                display:block !important;
+            }
+        </style>
+    </head>
+    <body ng-controller="FirstController">
+
+        <div ng-show="loading">
+            CARGANDO...
+        </div>
+<!--        <div ng-show="!loading and posts.lenght <= 0">
+            no se encuentran datos...
+        </div>-->
+        <!--        <input type="text" ng-model="nuevoComentario.comentario"/>
+                <input type="text" ng-model="nuevoComentario.username"/>
+                <input type="text" ng-model="nuevoComentario.variable"/>
+                <button ng-click="agregarComentario()"> agregar comentario</button>-->
+        <ul ng-show="!loading" class="animated">
+            <li ng-repeat="post in posts">
+                <h3>{{post.title}}</h3>
+                <p>{{post.body}}</p>
+            </li>
+        </ul>
+
+    </body>
+</html>

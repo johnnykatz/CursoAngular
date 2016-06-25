@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="CustomDirective">
+    <head>
+        <title>ng-src ng-cloak</title>
+        <meta charset="UTF-8">        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+                <script src="app.js"></script>
+        <style>
+           
+        </style>
+    </head>
+    <body ng-controller="AppCtrl">
+        <ul class="no-list" ng-cloak>
+            <li ng-repeat="repo in repos">
+                <img ng-src="{{repo.owner.avatar_url}}">
+                <h1>{{repo.name}}</h1>
+            </li>            
+        </ul>      
+    </body>
+</html>

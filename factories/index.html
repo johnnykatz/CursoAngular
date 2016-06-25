@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="TodoList">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+        <script src="controller.js"></script>
+        <script src="angular-local-storage.min.js"></script>
+
+    </head>
+    <body ng-controller="TodoController">
+
+        <form ng-submit="addAct()">
+            <h3>comentarioas</h3>
+            <input type="text" ng-model="newAct.descripcion"/>
+            <input type="text" ng-model="newAct.fecha"/>
+            <input type="submit" value="guardar act"/>
+            <button ng-click="clean()"> Limpiar</button>
+            <ul>
+                <li ng-repeat="actividad in todo">
+                    {{actividad.descripcion}} - {{actividad.fecha}} - <a href="#" ng-click="removeAct(actividad)">x</a> 
+                </li>
+            </ul>
+        </form>
+    </body>
+</html>
